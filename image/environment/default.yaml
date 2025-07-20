@@ -3,10 +3,10 @@
 
 # All environment variables used after the container first start
 # must be defined here.
-# more information : https://github.com/osixia/docker-light-baseimage
+# more information : https://github.com/kuebler-it/container-baseimage
 
 # General container configuration
-# see table 5.1 in http://www.openldap.org/doc/admin24/slapdconf2.html for the available log levels.
+# see table 5.1 in http://www.openldap.org/doc/admin25/slapdconf2.html for the available log levels.
 LDAP_LOG_LEVEL: 256
 
 # Ulimit

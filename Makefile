@@ -1,13 +1,13 @@
-NAME = osixia/openldap
-VERSION = 1.5.0
+NAME = kueblerit/openldap
+VERSION = 2.5.0
 
 .PHONY: build build-nocache test tag-latest push push-latest release git-tag-version
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm image
+	docker build -t $(NAME):$(VERSION) --progress plain --rm image --platform linux/amd64,linux/arm64
 
 build-nocache:
-	docker build -t $(NAME):$(VERSION) --no-cache --rm image
+	docker build -t $(NAME):$(VERSION) --progress plain --no-cache --rm image --platform linux/amd64,linux/arm64
 
 test:
 	env NAME=$(NAME) VERSION=$(VERSION) bats test/test.bats

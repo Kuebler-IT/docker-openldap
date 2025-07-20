@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
 # set -x (bash debug) if log level is trace
-# https://github.com/osixia/docker-light-baseimage/blob/master/image/tool/log-helper
+# https://github.com/kuebler-it/container-baseimage/blob/master/image/usr/local/sbin/log-helper
 log-helper level eq trace && set -x
 
 # Reduce maximum number of number of open file descriptors to 1024
 # otherwise slapd consumes two orders of magnitude more of RAM
 # see https://github.com/docker/docker/issues/8231
-ulimit -n $LDAP_NOFILE
+ulimit -n "$LDAP_NOFILE"
 
 # Call hostname to determine the fully qualified domain name. We want OpenLDAP to listen
 # to the named host for the ldap:// and ldaps:// protocols.
